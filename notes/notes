@@ -4,7 +4,10 @@ COMMANDS:
             - read -> (r)
             - write -> (w)
         chmod +x <filename.extension>   //adds execution permissions to file
-    
+        cp -R directory_1/ directory_2/   //copies directory_1 into directory_2
+        cp -R directory_1/. directory_2/   //copies contents of directory_1 into directory_2
+        rosservice call /gazebo/delete_model "model_name: 'brick_box_3x1x3"
+        
         roslaunch <package_name> <launch_file>      //launch ros program
             - pkg="package_name"                        //package ros will execute
             - type "filename.py"                        //program file we want to execute
