@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import rospy
-from geometry_msgs.msg import Twist 
+from geometry_msgs.msg import Twist
 
 rospy.init_node('topic_publisher')
 pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
@@ -15,6 +15,6 @@ vel.angular.y = 0
 vel.angular.z = 0.5
 
 
-while not rospy.is_shutdown(): 
-  pub.publish(vel)
-  rate.sleep()
+while not rospy.is_shutdown():
+    pub.publish(vel)
+    rate.sleep()
