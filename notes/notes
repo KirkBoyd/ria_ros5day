@@ -41,11 +41,32 @@ COMMANDS:
         rostopic -h                                 //"help". shows commands available
 
     MESSAGES:
-        rosmsg show <message>                       //get info about a message
+        rosmsg show <message>                                   //get info about a message
+
+    SERVICES:
+        rosservice list                                                 //lists all services available
+        rosservice info /name_of_service                                //gives info about service named /name_of_service
+            - Node: node that provides (has created) the service
+            - Type: the kind of message used by the topic
+            - Args: the arguments that the service takes when called
+        rosservice call /the_service_name  TAB-TAB                      //manually call a service. uses double tab completion to show the service message structure
+        rossrv show name_of_the_package/Name_of_service                 //explore the structure of that service message
+
+    GAZEBO:
+        rostopic echo /gazebo/model_states -n1 //get list of all objects in the gazebo scene
 
 Concepts:
     publisher - node that continouously publishes a message into a topic
     topic - "pipe" for nodes to publish or read info
+    service -
+        - Request: the part of the service message that defines HOW you will do a call to your service
+            - this means what variables you will have to pass to the Service Server so that it is able to complete its task
+        - Response: the part of the service message that defines HOW your service will respond after completing its functionality.
+            - i.e. if it will return a string with a message indicating success or maybe nothing etc...
+        EXAMPLES:
+            DeleteModel:
+              - Request - contains a string called model_name
+              - Response - composed of a boolean named success and a string named status_message
 
 
 TROUBLESHOOTING:
