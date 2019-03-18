@@ -23,7 +23,8 @@ COMMANDS:
         rospack list | grep <package_name>                               //search for a specific package
         rospack profile                                                  //force ROS to refresh package list
             - add '--zombie-only' to get just directory names
-
+    CATKIN:
+        cat <launch_file.launch>    //will display the launch file in the command line
     PARAMETERS:
         rosparam get <parameter_name>                  //get parameter value
         rosparam set <parameter_name> <value>          //set package value
